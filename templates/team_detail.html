@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>interior for S.V.PATEL & CO</title>
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/global.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+
+</head>
+
+<body>
+
+<section id="top" class="bg_dark  px-3">
+ <div class="container-fluid">
+  <div class="row top_1">
+   <div class="col-md-2 col-lg-3">
+    <div class="top_1l pt-3">
+	 <ul class="mb-0 font_14"> 
+		<li class="d-inline-block me-3"><a class="col_light" href="#"><i class="fa fa-facebook"></i> </a></li>
+		<li class="d-inline-block me-3"><a class="col_light" href="#"><i class="fa fa-twitter"></i> </a></li>
+		<li class="d-inline-block me-3"><a class="col_light" href="#"><i class="fa fa-pinterest"></i> </a></li>
+		<li class="d-inline-block"><a class="col_light" href="#"><i class="fa fa-youtube-play"></i> </a></li>
+	 </ul>
+	</div>
+   </div>
+   <div class="col-md-10 col-lg-9">
+    <div class="top_1r text-end">
+	   <ul class="mb-0 font_14"> 
+	  <li class="d-inline-block col_light"><i class="fa fa-envelope-o me-1 col_yell"></i> Email:  info@gmail.com</li>
+	  <li class="d-inline-block mx-3 col_light"><i class="fa fa-phone me-1 col_yell"></i> Call us: 9849077510</li>
+	 </ul>
+	</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="header">
+<nav class="navbar navbar-expand-md navbar-light bg-white mx-auto shadow_box px-3" id="navbar_sticky">
+  <div class="container-fluid">
+    <a class="navbar-brand p-0  fw-bold" href="index.html"><i class="fa fa-home col_yell"></i>S.V.PATEL & CO.,</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	   <ul class="navbar-nav mb-0 nav_1">
+	    
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{{ url_for('index') }}">Home</a>
+        </li>
+		 
+		<li class="nav-item">
+          <a class="nav-link" href="{{ url_for('about')}}">About </a>
+        </li>
+		
+		<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Store
+          </a>
+          <ul class="dropdown-menu drop_1" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item border-0" href="{{ url_for('detail') }}"><i class="fa fa-long-arrow-right font_14 me-1 align-middle"></i> Store Detail</a></li>
+          </ul>
+        </li>
+
+		<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Blog
+          </a>
+          <ul class="dropdown-menu drop_1" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('blog') }}"><i class="fa fa-long-arrow-right font_14 me-1 align-middle"></i> Blog</a></li>
+            <li><a class="dropdown-item border-0" href="{{ url_for('blog_detail') }}"><i class="fa fa-long-arrow-right font_14 me-1 align-middle"></i> Blog Detail</a></li>
+          </ul>
+        </li>
+		
+		<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Team
+          </a>
+          <ul class="dropdown-menu drop_1" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('team') }}"><i class="fa fa-long-arrow-right font_14 me-1 align-middle"></i> Team</a></li>
+            <li><a class="dropdown-item border-0" href="{{ url_for('team_detail') }}"><i class="fa fa-long-arrow-right font_14 me-1 align-middle"></i> Team Detail</a></li>
+          </ul>
+        </li>
+       
+		
+		<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Design
+          </a>
+          <ul class="dropdown-menu drop_1" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item border-0" href="{{ url_for('pricing') }}"><i class="fa fa-long-arrow-right font_14 me-1 align-middle"></i>our designs</a></li>
+          </ul>
+        </li>
+		
+		<li class="nav-item">
+          <a class="nav-link" href="{{ url_for('contact') }}">Contact </a>
+        </li>
+
+      </ul>
+       <ul class="navbar-nav mb-0 ms-auto">
+	    
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle dropdown_search nav_hide fs-6" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-search"></i>
+          </a>
+          <ul class="dropdown-menu drop_2 p-3" aria-labelledby="navbarDropdown">
+            <li>
+			  <div class="input-group">
+				<input type="text" class="form-control" placeholder="Search Here">
+				<span class="input-group-btn">
+					<button class="btn btn-primary bg_yell rounded-0 p-2 px-3 border-0" type="button">
+						<i class="fa fa-search"></i> </button>
+				</span>
+		</div>
+			</li>
+          </ul>
+        </li>
+		
+		<li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle dropdown_search nav_hide fs-6" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			   <i class="fa fa-user"></i>
+			</a>
+			<ul class="dropdown-menu drop_2 drop_3 p-3" aria-labelledby="navbarDropdown">
+				<form id="loginForm">
+					<h6>Username or email <span class="col_red">*</span></h6>
+					<input class="form-control font_14" placeholder="Username" type="text" name="username" id="username" required>
+					
+					<h6 class="font_14 mt-3">Password <span class="col_red">*</span></h6>
+					<input class="form-control font_14" placeholder="Password" type="password" name="password" id="password" required>
+		
+					<button type="submit" class="button_1 text-uppercase d-block text-center">Login</button>
+				</form>
+			</div>
+		
+			<script src="{{ url_for('static', filename='script/admin.js') }}"></script>
+				
+			</ul>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+</section>
+
+<section id="center" class="center_team_dt">
+ <div class="promo_m center_om">
+  <div class="container-fluid">
+    <div class="center_o1 row text-center">
+	 <div class="col-md-12">
+	   <h6 class="col_yell fw-bold"><a class="text-white" href="#">HOME PAGE</a> <span class="mx-2 text-muted">/</span> TEAM DETAIL</h6>
+	   <h1 class="mb-0 font_60 text-white mt-3">Team Detail</h1>
+	 </div>
+	</div>
+ </div>
+ </div>
+</section>
+
+
+<section id="team_dt" class="p_3 px-4">
+ <div class="container-fluid">
+    <div class="team_1dt1 row">
+	  <div class="col-md-6">
+	   <div class="team_1dt1l">
+	     <div class="grid clearfix">
+				  <figure class="effect-jazz mb-0">
+					<a href="#"><img src="{{ url_for('static', filename='img/15.png') }}"  class="w-100" alt="abc"></a>
+				  </figure>
+			  </div>
+	   </div>
+	  </div>
+	  <div class="col-md-6">
+	   <div class="team_1dt1r">
+	    <h1>S.V.PATEL & CO</h1>
+		<h6>OWNER</h6>
+		<p class="mt-3">S.V. Patel and Co. was founded by Shri S.V. , a visionary entrepreneur with a passion for transforming spaces. With decades of experience in the interior and exterior design industry, Shri Patel has always prioritized quality, innovation, and customer satisfaction. His keen eye for detail and dedication to sourcing premium materials has made S.V. Patel and Co. a trusted name in the industry. Under his leadership, the company has grown from a small venture into a well-established brand known for creating sophisticated and personalized designs for homes and commercial spaces.</p>
+		<p class="mt-3 mb-4">His keen eye for detail and dedication to sourcing premium materials has made S.V. Patel and Co. a trusted name in the industry. Under his leadership, the company has grown from a small venture into a well-established brand known for creating sophisticated and personalized designs for homes and commercial spaces.</p>
+		<h6 class="fw-bold"><i class="fa fa-phone col_yell me-2 fs-4 align-middle"></i>9849077510</h6>
+		<h6 class="fw-bold mt-3"><i class="fa fa-envelope col_yell me-2 fs-5 align-middle"></i>s.v.patelhnk@gmail.com</h6>
+
+	</div>	
+	<div class="team_1dt2 row mt-4">
+	 <div class="col-md-12">
+	  <h3 class="center_sm">Personal Experience</h3>
+	  <p class="mt-3">20 Years of Dedication by the Owner of S.V. Patel & Co. Interior Store
+
+		Over the past two decades, the owner of S.V. Patel & Co. has transformed what was once a modest interior design store into a hallmark of excellence in the field of interior and exterior design. His journey is marked by dedication, creativity, and a relentless commitment to customer satisfaction.</p>
+	  <p class="mb-0">From the very beginning, he demonstrated a deep understanding of the industry, combining traditional design principles with modern trends to create spaces that speak to the needs and dreams of his clients. His hands-on approach, attention to detail, and innovative mindset have not only set him apart as a leader in the field but have also shaped the reputation of S.V. Patel & Co. as a go-to destination for people seeking unique, personalized design solutions.</p>
+	 </div>
+	</div>
+	<div class="team_1dt3 row mt-4">
+	 <div class="col-md-6">
+	  <div class="team_1dt3l">
+	  </div>
+	 </div>
+	 
+	</div>
+ </div>
+</section>
+
+<section id="chat">
+ <div class="promo_m pt-5 pb-5 px-4">
+  <div class="container-fluid">
+    <div class="project_1 row text-center">
+	 <div class="col-md-12">
+	  <h6 class="col_yell fw-bold">YOU DREAM IT, WE DESIGN IT</h6>
+	  <h1 class="text-white mt-3">We can build you the interior and exterior design <br> of your dreams</h1>
+	 </div>
+	</div>
+ </div>
+ </div>
+</section>
+
+<section id="footer" class="p_3 px-4 bg_dark">
+	<div class="container-fluid">
+	  <div class="footer_1 row">
+	   <div class="col-md-3">
+		<div class="footer_1i">
+		<h3><a class="text-white text-uppercase" href="index.html"><i class="fa fa-home col_yell"></i>S.V.PATEL & CO.,</a></h3>
+		<h4 class="text-white"><i class="fa fa-phone me-1 col_yell"></i>9849077510</h4>
+		<ul class="mt-3 mb-0">
+		 <li class="d-inline-block"><a class="text-light" href="#"><i class="fa fa-facebook"></i></a></li>
+		 <li class="d-inline-block mx-3"><a class="text-light" href="#"><i class="fa fa-twitter"></i></a></li>
+		 <li class="d-inline-block"><a class="text-light" href="#"><i class="fa fa-pinterest"></i></a></li>
+		 <li class="d-inline-block mx-3"><a class="text-light" href="#"><i class="fa fa-instagram"></i></a></li>
+		 <li class="d-inline-block"><a class="text-light" href="#"><i class="fa fa-linkedin"></i></a></li>
+		</ul>
+		</div>
+	   </div>
+	   <div class="col-md-2">
+		<div class="footer_1i">
+		 <h5 class="text-white mb-4">ABOUT US</h5>
+		 <div class="row footer_1ism">
+			<h6 class="fw-normal col-md-12 col-6"><a class="col_light" href="#"> Home</a></h6>
+		<h6 class="fw-normal mt-2 col-md-12 col-6"><a class="col_light" href="#"> About </a></h6>
+		<h6 class="fw-normal mt-2 col-md-12 col-6"><a class="col_light" href="#"> Testimonials</a></h6>
+		<h6 class="fw-normal mt-2 col-md-12 col-6"><a class="col_light" href="#"> Contact Us</a></h6>
+		<h6 class="fw-normal mt-2 col-md-12 col-6"><a class="col_light" href="#"> Blog</a></h6>
+		<h6 class="fw-normal mt-2 col-md-12 col-6 mb-0"><a class="col_light" href="#"> Services</a></h6>
+		   </div>
+		</div>
+	   </div>
+	   <div class="col-md-2">
+		<div class="footer_1i">
+		 <h5 class="text-white mb-4">EXPLORE</h5>
+		 <div class="row footer_1ism">
+			<h6 class="fw-normal col-md-12 col-6"><a class="col_light" href="#"> Vanity Tops</a></h6>
+		<h6 class="fw-normal mt-2 col-md-12 col-6"><a class="col_light" href="#"> Counter Tops </a></h6>
+		<h6 class="fw-normal mt-2 col-md-12 col-6"><a class="col_light" href="#"> Bathroom Vanities</a></h6>
+		<h6 class="fw-normal mt-2 col-md-12 col-6 mb-0"><a class="col_light" href="#"> Kitchen Cabinets</a></h6>
+		   </div>
+		</div>
+	   </div>
+	   <div class="col-md-2">
+		<div class="footer_1i">
+		 <h5 class="text-white mb-4">QUICK LINKS</h5>
+		 <div class="row footer_1ism">
+			<h6 class="fw-normal col-md-12 col-6"><a class="col_light" href="#"> Warranty</a></h6>
+		<h6 class="fw-normal mt-2 col-md-12 col-6"><a class="col_light" href="#"> Trade Partners </a></h6>
+		<h6 class="fw-normal mt-2 col-md-12 col-6"><a class="col_light" href="#"> Design</a></h6>
+		<h6 class="fw-normal mt-2 col-md-12 col-6 mb-0"><a class="col_light" href="#"> Faq</a></h6>
+		   </div>
+		</div>
+	   </div>
+	   <div class="col-md-3">
+		<div class="footer_1i">
+		<h5 class="text-white mb-4"> OUR NEWSLETTER</h5>
+		<p class="col_light">Subscribe to receive inspiration, ideas, and news in your inbox.</p>
+		<div class="input-group mt-4">
+				   <input type="text" class="form-control" placeholder="Your Email">
+				   <span class="input-group-btn">
+					   <button class="btn btn-primary bg_yell rounded-0 p-2 px-3 border-0" type="button">
+						   SUBSCRIBE </button>
+				   </span>
+		   </div>
+		</div>
+	   </div>
+	  </div><hr class="mt-4 mb-4">
+	  <div class="footer_2 row text-center">
+	   <div class="col-md-12">
+		 <p class="mb-0 col_light">© 2024 S.V.PATEL & CO., All Rights Reserved | Design by B.DEVA & TEAM <a class="col_yell fw-bold" href="">TemplateOnWeb</a></p>
+	   </div>
+	  </div>
+	</div>
+   </section>
+<script>
+window.onscroll = function() {myFunction()};
+var navbar_sticky = document.getElementById("navbar_sticky");
+var sticky = navbar_sticky.offsetTop;
+var navbar_height = document.querySelector('.navbar').offsetHeight;
+function myFunction() {
+  if (window.pageYOffset >= sticky + navbar_height) {
+    navbar_sticky.classList.add("sticky")
+	document.body.style.paddingTop = navbar_height + 'px';
+  } else {
+    navbar_sticky.classList.remove("sticky");
+	document.body.style.paddingTop = '0'
+  }
+}
+script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</script>
+
+</body>
+
+</html>

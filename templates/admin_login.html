@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB Data Display</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        /* Body styling */
+        body {
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Full-screen video background */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-bottom: 3px solid #007bff;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 10;
+        }
+
+        .navbar-brand {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #ffdd57 !important;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar .btn {
+            color: #fff !important;
+            background: linear-gradient(135deg, #dc3545, #f56d7c);
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            font-size: 1rem;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(220, 53, 69, 0.5);
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .navbar .btn:hover {
+            background-color: #ff616f !important;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 97, 111, 0.7);
+        }
+
+        /* Header styling */
+        h1 {
+            color: #ffdd57;
+            font-size: 4rem;
+            font-weight: 700;
+            text-shadow: 3px 3px 10px rgba(0, 123, 255, 0.3);
+            text-align: center;
+            margin-top: 30px;
+            animation: zoomIn 2s ease;
+        }
+
+        /* Keyframe for h1 zoom-in */
+        @keyframes zoomIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Enhanced 3D Table styling */
+        .table {
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+            border-radius: 15px;
+            border-collapse: separate;
+            border-spacing: 0 15px;
+            margin-top: 40px;
+            transform: perspective(800px) rotateX(15deg); /* Deeper 3D effect */
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .table:hover {
+            transform: perspective(800px) rotateX(0deg); /* Restore to flat on hover */
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+        }
+
+        .table thead th {
+            background-color: #007bff;
+            color: white;
+            font-size: 1.3rem;
+            padding: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .table tbody tr {
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .table tbody tr:hover {
+            background-color: #eaeaea;
+            transform: scale(1.05) translateY(-5px); /* Lift effect */
+        }
+
+        .table tbody td {
+            padding: 20px;
+            font-size: 1.1rem;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        /* Footer styling */
+        .footer {
+            margin-top: 50px;
+            padding: 25px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 1.2rem;
+            border-top: 3px solid #007bff;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: #007bff;
+            border-radius: 50px;
+        }
+
+        /* Media queries for responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            .navbar .btn {
+                font-size: 0.85rem;
+                padding: 8px 16px;
+            }
+
+            .table thead th, .table tbody td {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+
+            .navbar .btn {
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background video -->
+    <video autoplay muted loop class="background-video">
+        <source src="img/rain.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+        <!-- Navigation bar with a logout button -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">Admin Dashboard</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="btn" href="{{ url_for('index') }}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main content -->
+        <h1>ADMIN DASHBOARD</h1>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                    <tr>
+                        <td>{{ item._id }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.email }}</td>
+                        <td>{{ item.phone }}</td>
+                        <td>{{ item.message }}</td>
+                        <td>
+                            <form action="{{ url_for('delete_feedback', feedback_id=item._id) }}" method="POST">
+                                <button class="btn btn-danger" type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                
+            </table>
+        </div>
+
+        <!-- Footer section -->
+        <div class="footer">
+            &copy; 2024 S.V. Patel & Co. All rights reserved.
+        </div>
+    </div>
+    
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
